@@ -21,14 +21,17 @@ Route::controllers([
 ]);
 
 
-Route::get('/merchants', 'MerchantController@showAll');
-Route::get('/merchants/{id}', 'MerchantController@show');
-Route::get('/queues', 'QueueController@showMerchantQueue');
-Route::get('/queues/{id}', 'QueueController@show');
+Route::get('/api/merchants', 		'MerchantController@showAll');
+Route::get('/api/merchants/{id}', 	'MerchantController@show');
+Route::get('/api/queues', 			'QueueController@showMerchantQueue');
+Route::get('/api/queues/{id}', 		'QueueController@show');
+Route::get('/api/items/{id}', 		'ItemController@show');
+Route::get('/api/items', 			'ItemController@showMerchantItems');
 
-Route::post('/queues', 'QueueController@create');
+Route::post('/api/queues', 			'QueueController@create');
+Route::post('/api/items', 			'ItemController@create');
 
-Route::put('/merchants/{id}', 'MerchantController@update');
-Route::put('/queues/{id}', 'QueueController@update');
+Route::put('/api/merchants/{id}', 	'MerchantController@update');
+Route::put('/api/queues/{id}', 		'QueueController@update');
 
-Route::post('/payments', 'PaymentController@payments');
+Route::delete('/api/items/{id}', 	'ItemController@delete');

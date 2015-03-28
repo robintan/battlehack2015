@@ -10,4 +10,6 @@ class OrderList extends Model {
 
 	protected $hidden = [];
 
+	public $timestamps = false;
+
 }

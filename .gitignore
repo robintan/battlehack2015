@@ -3,3 +3,4 @@
 .env
 /storage/logs
 /storage/database.sqlite
+composer.lock

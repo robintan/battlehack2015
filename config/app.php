@@ -1,9 +1,9 @@
 <?php
 
-Braintree_Configuration::environment('sandbox');
-Braintree_Configuration::merchantId('k677d9cvg9zt49p6');
-Braintree_Configuration::publicKey('7x4y8y8b3q6s6tgx');
-Braintree_Configuration::privateKey('11f0631346e7eb17d5e0f13c66ddfc1a');
+Braintree_Configuration::environment(env('BRAINTREE_ENV'));
+Braintree_Configuration::merchantId(env('BRAINTREE_MERCHANT_ID'));
+Braintree_Configuration::publicKey(env('BRAINTREE_PUBLIC_KEY'));
+Braintree_Configuration::privateKey(env('BRAINTREE_PRIVATE_KEY'));
        
        
 return [
@@ -200,9 +200,4 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 
 	],
-
-    'braintree_environment' => 'sandbox',
-    'braintree_merchantid' => 'k677d9cvg9zt49p6',
-    'braintree_public_key' => '7x4y8y8b3q6s6tgx',
-    'braintree_private_key' => '11f0631346e7eb17d5e0f13c66ddfc1a',
 ];
