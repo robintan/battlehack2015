@@ -11,14 +11,14 @@ $ composer global require "laravel/installer=~1.1"
 
 # Getting Started
 
-3. Pull this repository
+1. Pull this repository
 
-4. Download all dependencies
+2. Download all dependencies
 ```sh
 $ composer install
 ```
 
-5. Start the server inside the project directory
+3. Start the server inside the project directory
 ```sh
 $ php artisan serve
 ```

@@ -18,6 +18,12 @@ class CreateUsersTable extends Migration {
 			$table->string('name');
 			$table->string('email')->unique();
 			$table->string('password', 60);
+			$table->mediumText('description')->nullable();
+			$table->string('address_line_1')->nullable();
+			$table->string('address_line_2')->nullable();
+			$table->string('phone_number')->nullable();
+			$table->integer('queue_size')->unsigned()->default(0);
+			$table->string('image_url')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});

@@ -19,3 +19,14 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::get('/merchants', 'MerchantController@showAll');
+Route::get('/merchants/{id}', 'MerchantController@show');
+Route::get('/queues', 'QueueController@showMerchantQueue');
+Route::get('/queues/{id}', 'QueueController@show');
+
+Route::post('/queues', 'QueueController@create');
+
+Route::put('/merchants/{id}', 'MerchantController@update');
+Route::put('/queues/{id}', 'QueueController@update');
