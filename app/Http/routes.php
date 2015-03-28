@@ -11,6 +11,9 @@
 |
 */
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
