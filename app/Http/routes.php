@@ -30,3 +30,5 @@ Route::post('/queues', 'QueueController@create');
 
 Route::put('/merchants/{id}', 'MerchantController@update');
 Route::put('/queues/{id}', 'QueueController@update');
+
+Route::post('/payments', 'PaymentController@payments');

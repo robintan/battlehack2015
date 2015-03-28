@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+
+use Braintree;
+use Braintree_ClientToken;
+use Braintree_Configuration;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +35,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+       // $clientToken =  Braintree_ClientToken::generate();
+       // echo $clientToken;
 		return view('welcome');
 	}
-
 }
