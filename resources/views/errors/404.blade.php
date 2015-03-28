@@ -1,5 +1,6 @@
 @extends('errors/error')
 
 @section('error-content')
-	Be right back.
+	Oops!<br>
+	It seems like we don't have this page.
 @endsection
