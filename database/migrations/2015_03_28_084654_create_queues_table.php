@@ -15,7 +15,7 @@ class CreateQueuesTable extends Migration {
 		Schema::create('queues', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('merchant_id')->index();
+			$table->integer('merchant_id')->unsigned()->index();
 			$table->foreign('merchant_id')->references('id')->on('users');
 			$table->string('phone_number');
 			$table->string('email');

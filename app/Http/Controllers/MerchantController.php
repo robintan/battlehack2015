@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Model\Queue;
+use App\Model\Item;
 
 use Braintree_ClientToken;
+
+use DB;
 
 class MerchantController extends Controller {
 
@@ -23,11 +26,25 @@ class MerchantController extends Controller {
 		return response()->json(['merchants' => $merchants]);
 	}
 
+	public function showMerchantPage($id) {
+
+		$merchant = User::find($id);
+
+		$merchant['queueing'] = Queue::where('merchant_id', '=', $id)->count();
+
+		$items = Item::where('merchant_id', '=', $id)->get();
+
+		return view('merchants', ['merchantInfo' => $merchant, 'items' => $items]);
+	}
+
 	public function show($id) {
 
 		$merchant = User::find($id);
 
+		$merchant['queueing'] = Queue::where('merchant_id', '=', $id)->count();
+
 		return response()->json(['merchant' => $merchant]);
+
 	}
 
 	public function update(Request $request, $id) {

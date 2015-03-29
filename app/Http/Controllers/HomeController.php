@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\User;
+use App\Model\Queue;
+
 class HomeController extends Controller {
 
 	/*
@@ -30,7 +33,13 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+		$merchants = User::all();
+
+		foreach ($merchants as $merchant) {
+			$merchant['queueing'] = Queue::where('merchant_id', '=', $merchant->id)->count();
+		};
+
+		return view('home', compact('merchants'));
 	}
 
 }
