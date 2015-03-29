@@ -22,7 +22,8 @@ Route::controllers([
 
 
 Route::get('/api/merchants', 		'MerchantController@showAll');
-Route::get('/api/merchants/{id}', 	'MerchantController@show');
+Route::get('/api/merchants/{id}', 		'MerchantController@show');
+Route::get('/merchants/{id}', 		'MerchantController@showMerhcantPage');
 Route::get('/api/queues', 			'QueueController@showMerchantQueue');
 Route::get('/api/queues/{id}', 		'QueueController@show');
 Route::get('/api/items/{id}', 		'ItemController@show');

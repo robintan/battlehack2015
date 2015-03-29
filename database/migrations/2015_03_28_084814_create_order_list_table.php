@@ -14,9 +14,9 @@ class CreateOrderListTable extends Migration {
 	{
 		Schema::create('order_list', function(Blueprint $table)
 		{
-			$table->integer('order_id')->index();
+			$table->integer('order_id')->unsigned()->index();
 			$table->foreign('order_id')->references('id')->on('orders');
-			$table->integer('item_id')->index();
+			$table->integer('item_id')->unsigned()->index();
 			$table->foreign('item_id')->references('id')->on('items');
 			$table->integer('quantity');
 		});

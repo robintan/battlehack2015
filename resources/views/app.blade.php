@@ -4,13 +4,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AIR</title>
+	<title>BattleHack 2015</title>
 
-	<link href="/css/app.css" rel="stylesheet">
-
+	 <link href="/css/app.css" rel="stylesheet"> 
+	{{-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> --}}
+	<link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-		
+	{{-- <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+		 --}}
 	
 </head>
 <body>
@@ -28,7 +30,13 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/">Home</a></li>
+					@if (Auth::guest())
+						<li><a href="/browse">Browse</a></li>
+					@else
+						<li><a href="/home">Home</a></li>
+					@endif
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
