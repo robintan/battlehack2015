@@ -36,3 +36,7 @@ Route::put('/api/merchants/{id}', 	'MerchantController@update');
 Route::put('/api/queues/{id}', 		'QueueController@update');
 
 Route::delete('/api/items/{id}', 	'ItemController@delete');
+
+
+Route::post('/api/get_nonce', 'PaymentController@get_nonce');
+Route::post('/api/sendsms', 'NotificationController@sendSMS');

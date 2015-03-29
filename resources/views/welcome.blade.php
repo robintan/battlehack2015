@@ -43,7 +43,7 @@
 				<div class="quote">{{ Inspiring::quote() }}</div>
 			</div>
 
-				<form id="checkout" method="post" action="/payments">
+				<form id="checkout" method="post" action="/api/get_nonce">
 					<div id="dropin"></div>
 					<button class="btn btn-primary" type="submit">Pay</button>
 				</form>
